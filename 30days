@@ -1,0 +1,23 @@
+for row in xxx:
+        if header==1:
+            header=0
+            continue
+        x = x + 1
+        if row[5] == 'XXX':
+            root.append(row[13])
+            sup_date.append(row[7])
+
+    x = 0
+
+    for row in xxx:
+        if header==1:
+            header=0
+            continue
+        x = x + 1
+
+        if row[0] in root:
+            diff = row[1] - sup_date[root.index(row[0])]
+            if diff <= datetime.timedelta(days = 30) and diff >= datetime.timedelta(days = 0):
+                count = count + 1
+                file.write("\n\n " + str(row))
+print(count)
