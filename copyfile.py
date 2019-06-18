@@ -4,6 +4,8 @@ Created on Fri May 24 11:30:11 2019
 
 @author: Ivory.Lu
 """
+# Read filepath from the csv file and copy the file into the destination
+
 import csv
 from shutil import copyfile
 import pandas as pd
