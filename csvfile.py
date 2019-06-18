@@ -25,7 +25,7 @@ name_org = set(data.name)
 de_col = pd.merge(data, test, on='name', how = 'outer')
 all_col = pd.merge(de_col, species, on='name', how = 'outer')
 
-# Compare different folders
+# Compare files in different folders
 
 from os import listdir
 from os.path import isfile, join
