@@ -4,6 +4,7 @@ Created on Mon May 27 12:22:57 2019
 
 @author: Ivory.Lu
 """
+# Merge two csv files into one file
 import csv
 import pandas as pd
 
@@ -24,6 +25,7 @@ name_org = set(data.name)
 de_col = pd.merge(data, test, on='name', how = 'outer')
 all_col = pd.merge(de_col, species, on='name', how = 'outer')
 
+# Compare different folders
 
 from os import listdir
 from os.path import isfile, join
