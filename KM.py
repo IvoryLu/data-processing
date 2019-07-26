@@ -1,4 +1,4 @@
-#Read in data
+#Read in data (Input)
 dataset = pd.read_csv('H:/Juan Lu/AF/Outcome/af_bleed.csv')
 
 #Processing Column
@@ -17,7 +17,10 @@ event = dataset['your_event_col']
 
 #Fit the model
 kmf.fit(time[~ix], event[~ix], label = 'Event without Group')
-ax = kmf.plot() 
+#Output plot
+ax = kmf.plot()  
 #ax = kmf.plot(ax=ax)
+
+#Fit and plot
 kmf.fit(time[ix], event[ix], label='Event with Group')
 ax = kmf.plot(ax=ax)
