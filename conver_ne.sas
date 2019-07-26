@@ -1,0 +1,10 @@
+proc format;
+value $missfmt ' '='Missing' other='Not Missing';
+value missfmt .='Missing' other='Not Missing';
+run;
+proc freq data=tmp2.subpbs1014;
+format _CHAR_ $missfmt.;
+tables _CHAR_ / missing missprint nocum nopercent;
+format _NUMERIC_ missfmt.;
+tables _NUMERIC_ / missing missprint nocum nopercent;
+run;
