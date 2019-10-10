@@ -1,4 +1,6 @@
 # data-processing
 Practice data processing
 
-Fine Basic Python Data analysing function here.
+Find Basic Python Data analysing function here.
+
+Currently it has Basic Math, Plot, Survival Analysis and csv processing.
