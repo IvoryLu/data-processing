@@ -3,6 +3,7 @@ import numpy as np
 
 for i in range(1000): # 1000 experiments
    #Test One Sample T-test
+   #Expected average is 30. 
    tstatistic, pval = ttest_1samp(daily_visitors[i], 30)
    #print the pvalue here:
    print pval
