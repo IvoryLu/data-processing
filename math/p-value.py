@@ -61,3 +61,31 @@ tukey_results = pairwise_tukeyhsd(v,labels,0.05)
 
 print(tukey_results)
 
+#Binomial Test
+# A Binomial Test compares a categorical dataset to some expectation. 
+# The null hypothesis would be there is no difference between the observed behavior and 
+# the expected behaviros. If we get a p-value of less than 0.05, we can reject that hypothesis. 
+pval = binom_test(525, n=1000, p=0.5) #525 actual number, n total number, p expected value
+
+#Chi Square Test
+#Used for two or more categorical datasets that we want to compare.
+#Men and women were both given a survey asking “Which of the following 
+#three products is your favorite?” 
+#Did the men and women have significantly different preferences?
+from scipy.stats import chi2_contingency
+
+# Contingency table
+#         harvester |  leaf cutter
+# ----+------------------+------------
+# 1st gr | 30       |  10
+# 2nd gr | 35       |  5
+# 3rd gr | 28       |  12
+
+X = [[30, 10],
+     [35, 5],
+     [28, 12],
+     [20, 20]]
+chi2, pval, dof, expected = chi2_contingency(X)
+print pval
+
+
