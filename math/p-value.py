@@ -34,9 +34,30 @@ print(pval)
 #ANOVA 
 #It tests the null hypothesis that all of the datasets have the same mean.
 #If we reject the null hypothesis (small p-value) with ANOVA, we're saying that 
-#at least one of the sets has a different mean;
+#at least one of the sets has a different mean;but we can't make any conclusions on
+#which two populations have a significant difference
 
 fstat, pval = f_oneway(a,b,c)
 print(pval)
 
+#Tukey's Range Test
+#Tukey's Test can tell us which pairs of locations are distinguishable from each other. 
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+from scipy.stats import f_oneway
+import numpy as np
+
+a = np.genfromtxt("store_a.csv",  delimiter=",")
+b = np.genfromtxt("store_b.csv",  delimiter=",")
+c = np.genfromtxt("store_c.csv",  delimiter=",")
+
+stat, pval = f_oneway(a, b, c)
+print pval
+
+# Using our data from ANOVA, we create v and l
+v = np.concatenate([a, b, c])
+labels = ['a'] * len(a) + ['b'] * len(b) + ['c'] * len(c)
+
+tukey_results = pairwise_tukeyhsd(v,labels,0.05)
+
+print(tukey_results)
 
