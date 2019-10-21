@@ -30,3 +30,13 @@ print(week1_std)
 
 tstatistic, pval = ttest_ind(week1, week2)
 print(pval)
+
+#ANOVA 
+#It tests the null hypothesis that all of the datasets have the same mean.
+#If we reject the null hypothesis (small p-value) with ANOVA, we're saying that 
+#at least one of the sets has a different mean;
+
+fstat, pval = f_oneway(a,b,c)
+print(pval)
+
+
