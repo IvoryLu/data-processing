@@ -7,7 +7,7 @@ print(dataset.isnull().sum())
 dataset['EndStageRenal'].value_counts()
 
 # Delete the % in the column
-students['score'].replace('[\%,]','',regex=True)
+us_census.Income = us_census['Income'].replace('[\$,]', '', regex=True)
 
 #split the column by number
 split_grade = students['grade'].str.split('(\d+)', expand=True)
