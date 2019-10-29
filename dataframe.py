@@ -11,12 +11,11 @@ split_grade = students['grade'].str.split('(\d+)', expand=True)
 
 #Import multiple files and concatanate into one dataframe
 import glob
-all_files = glob.glob(path + "/*.csv")
+files = glob.glob(path + "/*.csv")
+#files = glob.glob("file*.csv")
 
-li = []
-
-for filename in all_files:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    li.append(df)
-
+df_list = []
+for filename in files:
+  data = pd.read_csv(filename)
+  df_list.append(data)
 frame = pd.concat(li, axis=0, ignore_index=True)
