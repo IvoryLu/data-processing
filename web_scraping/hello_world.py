@@ -21,3 +21,6 @@ for child in soup.div.children:
 #find all the a element
 turtle_links = soup.find_all("a")
 print(turtle_links)
+
+#Define a new dictionary:
+turtle_data = {}
