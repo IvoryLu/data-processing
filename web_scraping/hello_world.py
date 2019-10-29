@@ -17,3 +17,7 @@ print(soup.p.string)
 #print all the children under the div
 for child in soup.div.children:
   print(child)
+  
+#find all the a element
+turtle_links = soup.find_all("a")
+print(turtle_links)
