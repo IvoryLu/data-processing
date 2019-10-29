@@ -18,4 +18,5 @@ df_list = []
 for filename in files:
   data = pd.read_csv(filename)
   df_list.append(data)
-frame = pd.concat(li, axis=0, ignore_index=True)
+#frame = pd.concat(li, axis=0, ignore_index=True)
+df = pd.concat(df_list)
