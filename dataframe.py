@@ -20,3 +20,6 @@ for filename in files:
   df_list.append(data)
 #frame = pd.concat(li, axis=0, ignore_index=True)
 df = pd.concat(df_list)
+
+print(df.columns)
+print(df.dtypes)
