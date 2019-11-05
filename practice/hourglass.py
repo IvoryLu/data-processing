@@ -12,7 +12,7 @@ def hourglassSum(arr):
     count = 0
     num_row = len(arr)
     num_col = len(arr[0])
-    max_count = 0
+    max_count = -99999
     for i, row in enumerate(arr):
         for j, ele in enumerate(row):
             if j + 2 < num_col and i + 2 < num_row:
