@@ -17,22 +17,32 @@ class Graph:
     current_room = 'entrance'
     path_total = 0
     print("\nStarting off at the {0}\n".format(current_room))
+    #  keep navigating the maze until we find the 'treasure room'
     while current_room != 'treasure room':
       node = self.graph_dict[current_room]
+      # print out possible options
       for connected_room, weight in node.edges.items():
         key = connected_room[0]
         print("enter {0} for {1}: {2} cost".format(key, connected_room, weight))
+      # valid choices list
       valid_choices = [room[:1] for room in node.edges.keys()]
+   
       print("\nYou have accumulated: {0} cost".format(path_total))
+      # Get people decision
       choice = input("\nWhich room do you move to? ")
+      # Notice people when they enter wrong things 
       if choice not in valid_choices:
         print("please select from these letters: {0}".format(valid_choices))
       else:
+        # If they've made their decision
         for room in node.edges.keys():
           if room.startswith(choice):
+            # Move to the next room and add the cost on edge. 
             current_room = room
             path_total += node.edges[room]
+        # Notice people about their decision. 
         print("\n*** You have chosen: {0} ***\n".format(current_room))
+    #Arrive at the treasure room
     print("Made it to the treasure room with {0} cost".format(path_total))
     
       
